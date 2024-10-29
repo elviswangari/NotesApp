@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\ProfileController;
 
+Route::redirect('/', '/note')->name('dashboard');
+
 Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('note', NoteController::class);
 });
